@@ -1,0 +1,55 @@
+{
+  "extends": [
+    "tslint-misc-rules",
+    "tslint-config-inmotionnow"
+  ],
+  "rulesDirectory": [
+    "tslint-misc-rules"
+  ],
+  "rules": {
+    "array-type": false, // Fix?
+    "ban-types": false, // Fix?
+    "callable-types": false, // Fix?
+    "curly": false, // Fix?
+    "forin": false, // Fix?
+    "interface-over-type-literal": false, // Fix?
+    "jsdoc-format": false, // Fix?
+    "max-classes-per-file": false, // Fix?
+    "member-access": false, // Fix?
+    "member-ordering": false, // Fix?
+    "no-angle-bracket-type-assertion": false, // Fix?
+    "no-bitwise": false, // Fix?
+    "no-console" : {
+      "severity": "warning"
+    },
+    "no-empty": false, // Fix?
+    "no-empty-interface": false, // Fix?
+    "no-namespace": false, // Fix?
+    "no-shadowed-variable": false, // Fix?
+    "no-string-literal": false, // Fix?
+    "no-string-throw": false, // Fix?
+    "no-this-assignment": [true, {
+      "allow-destructuring": true
+    }],
+    "no-unnecessary-initializer": false, // Fix?
+    "no-unused-expression": false, // Fix?
+    "no-var-requires": false, // Fix?
+    "object-literal-sort-keys": false, // Fix?
+    "only-arrow-functions": false, // Fix?
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any",
+        "grouped-imports": false,
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+    "variable-name": false,
+
+    // tslint-microsoft-contrib
+    "react-a11y-img-has-alt": false, // Fix
+
+    // tslint-misc-rules
+    "sort-imports": [ true, "whitespace-insensitive" ]
+  }
+}
