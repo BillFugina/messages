@@ -1,6 +1,6 @@
 import { Channel } from 'pusher-js'
-import { IPusherSendMessage, PusherReducer } from 'src/types/pusher'
 import { pusherContext } from 'src/context/pusher-context'
+import { PusherReducer } from 'src/types/pusher'
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 
 const usePusher = <TState, TMessageFormat>(
@@ -8,7 +8,7 @@ const usePusher = <TState, TMessageFormat>(
   eventName: string,
   reducer: PusherReducer<TState, TMessageFormat>,
   initialState: TState
-): [TState, IPusherSendMessage<TMessageFormat>] => {
+): [TState] => {
   const channel = useRef<Channel>()
   const pusher = useContext(pusherContext)
   const [state, setState] = useState(initialState)
@@ -32,16 +32,7 @@ const usePusher = <TState, TMessageFormat>(
     }
   }, [])
 
-  const sendMessage: IPusherSendMessage<TMessageFormat> = (message: TMessageFormat, selfProcess?: boolean) => {
-    if (channel.current) {
-      channel.current.trigger(eventName, message)
-    }
-    if (selfProcess) {
-      messageHandler(message)
-    }
-  }
-
-  return [state, sendMessage]
+  return [state]
 }
 
 export { usePusher }
