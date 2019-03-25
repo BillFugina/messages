@@ -1,4 +1,5 @@
 import 'src/index.css'
+import 'bootstrap/dist/css/bootstrap.css'
 import * as serviceWorker from 'src/serviceWorker'
 import App from 'src/App'
 import React from 'react'
